@@ -35,7 +35,7 @@ A complete web-based "15 Puzzle" (slide puzzle) game.
 
 1. Build and start the container:
    ```bash
-   docker-compose up
+   docker compose up
    ```
 2. Open your browser and navigate to `http://localhost:3000`.
 
