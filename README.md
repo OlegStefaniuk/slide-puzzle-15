@@ -12,7 +12,7 @@ A complete web-based "15 Puzzle" (slide puzzle) game.
 - **Two Tile Modes**:
   - **Numbers**: Classic numbered tiles.
   - **Images**: Tiles with unique colorful geometric shapes (SVG placeholders).
-- **Internationalization**: Full support for English and Ukrainian.
+ - **Internationalization**: Full support for English and Ukrainian (en, ua).
 - **Persisted Settings**: Theme, mode, and language choices are saved in `localStorage`.
 - **Responsive Design**: Works well on both desktop and mobile devices.
 - **Docker Support**: Containerized for easy deployment.

@@ -128,8 +128,25 @@ h1 {
     transition: transform 0.1s;
 }
 
-.btn-primary:active {
+.btn-primary:active, .btn-secondary:active {
     transform: scale(0.95);
+}
+
+.btn-secondary {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid currentColor;
+    border-radius: 8px;
+    transition: transform 0.1s, background-color 0.2s;
+    margin-left: 10px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 /* Modal */

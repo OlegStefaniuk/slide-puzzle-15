@@ -9,19 +9,21 @@ const i18n = (() => {
       time: "Time",
       winMessage: "Congratulations! You solved the puzzle!",
       playAgain: "Play Again",
+      close: "Close",
       theme: "Theme",
       mode: "Mode",
       numbers: "Numbers",
       images: "Images",
       language: "UA / EN"
     },
-    uk: {
+    ua: {
       title: "Гра в 15",
       newGame: "Нова гра",
       moves: "Ходи",
       time: "Час",
       winMessage: "Вітаємо! Ви зібрали пазл!",
       playAgain: "Грати знову",
+      close: "Закрити",
       theme: "Тема",
       mode: "Режим",
       numbers: "Числа",
@@ -31,7 +33,7 @@ const i18n = (() => {
   };
 
   let currentLang = localStorage.getItem('puzzle-lang') || 
-                   (navigator.language.startsWith('uk') ? 'uk' : 'en');
+                   (navigator.language.startsWith('uk') ? 'ua' : 'en');
 
   const setLanguage = (lang) => {
     if (translations[lang]) {
@@ -42,7 +44,7 @@ const i18n = (() => {
   };
 
   const toggleLanguage = () => {
-    setLanguage(currentLang === 'en' ? 'uk' : 'en');
+    setLanguage(currentLang === 'en' ? 'ua' : 'en');
   };
 
   const t = (key) => {

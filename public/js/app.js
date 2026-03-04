@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const finalMovesEl = document.getElementById('final-moves');
   const finalTimeEl = document.getElementById('final-time');
   const playAgainBtn = document.getElementById('play-again');
+  const closeModalBtn = document.getElementById('close-modal');
 
   let gameStarted = false;
 
@@ -82,6 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event Listeners
   newGameBtn.addEventListener('click', startNewGame);
   playAgainBtn.addEventListener('click', startNewGame);
+  closeModalBtn.addEventListener('click', () => {
+    winModal.classList.add('hidden');
+  });
 
   themeToggleBtn.addEventListener('click', () => {
     Themes.toggleTheme();
