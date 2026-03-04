@@ -1,0 +1,66 @@
+body.theme-retro {
+    background-color: #1a1a2e;
+    color: #0fef;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.theme-retro h1 {
+    color: #0fef;
+    text-shadow: 2px 2px #ff2a6d;
+}
+
+.theme-retro .tile {
+    background-color: #16213e;
+    color: #ff2a6d;
+    border: 2px solid #0fef;
+    box-shadow: 4px 4px 0px #05d9e8;
+    border-radius: 0;
+    font-size: 1.5rem;
+}
+
+.theme-retro .btn-primary {
+    background-color: #ff2a6d;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    box-shadow: 4px 4px 0px #05d9e8;
+    border-radius: 0;
+}
+
+.theme-retro .btn-control {
+    color: #05d9e8;
+    border: 2px solid #05d9e8;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    border-radius: 0;
+}
+
+.theme-retro .btn-control:hover {
+    background-color: #05d9e8;
+    color: #1a1a2e;
+}
+
+.theme-retro .modal-content {
+    background-color: #1a1a2e;
+    color: #0fef;
+    border: 4px solid #ff2a6d;
+    border-radius: 0;
+}
+
+/* Scanline Effect */
+.theme-retro .scanline {
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: linear-gradient(
+        to bottom,
+        rgba(18, 16, 16, 0) 50%,
+        rgba(0, 0, 0, 0.25) 50%
+    );
+    background-size: 100% 4px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}

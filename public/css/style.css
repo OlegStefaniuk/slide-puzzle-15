@@ -1,0 +1,190 @@
+:root {
+    --board-size: 400px;
+    --tile-size: calc(var(--board-size) / 4);
+    --transition-speed: 200ms;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--board-size);
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btn-control {
+    flex: 1;
+    padding: 8px 4px;
+    font-size: 12px;
+    cursor: pointer;
+    background: none;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.board {
+    position: relative;
+    width: var(--board-size);
+    height: var(--board-size);
+    margin: 0 auto 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    background-color: transparent;
+}
+
+.tile {
+    position: absolute;
+    width: calc(var(--tile-size) - 2px);
+    height: calc(var(--tile-size) - 2px);
+    margin: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: transform var(--transition-speed) ease-in-out, 
+                box-shadow 0.2s, 
+                filter 0.2s;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.tile:hover {
+    filter: brightness(1.1);
+}
+
+.tile-empty {
+    visibility: hidden;
+}
+
+.tile-number {
+    display: block;
+}
+
+.tile-image {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Mode-based display */
+.mode-images .tile-number {
+    display: none;
+}
+.mode-images .tile-image {
+    display: block;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.actions {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.1s;
+}
+
+.btn-primary:active {
+    transform: scale(0.95);
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 90%;
+}
+
+.final-stats {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 440px) {
+    :root {
+        --board-size: 320px;
+    }
+    .tile {
+        font-size: 1.5rem;
+    }
+}
+
+/* Win animation classes */
+@keyframes pulse {
+    0% { transform: translate(var(--tx), var(--ty)) scale(1); }
+    50% { transform: translate(var(--tx), var(--ty)) scale(1.1); }
+    100% { transform: translate(var(--tx), var(--ty)) scale(1); }
+}
+
+.pulse {
+    animation: pulse 0.4s ease-out;
+}
+
+/* Scanline placeholder */
+.scanline {
+    display: none;
+}
